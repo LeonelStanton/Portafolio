@@ -963,6 +963,9 @@ justify-content: end;
 
   .navbar {
     position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     top: 100%;
     left: 0;
     width: 100%;
@@ -974,7 +977,10 @@ justify-content: end;
   }
 
   .navbar.active {
-    display: block;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     
   }
 
