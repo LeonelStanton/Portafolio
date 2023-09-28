@@ -6,42 +6,53 @@ menuIcon.onclick = () => {
     menuIcon.classList.toggle('bx-x');
     navbar.classList.toggle('active');
 };
- 
-let sections = document.querySelectorAll('section');
-let navLinks = document.querySelectorAll('header nav a');
-let skills = document.getElementById("skills");
+menuIcon.classList.remove('bx-x');
+navbar.classList.remove('active');
+
+// Función para actualizar la apariencia del encabezado
+function updateHeaderAppearance() {
+    if (window.innerWidth > 768) {
+    const header = document.querySelector('header');
+    if (window.scrollY > 0) {
+        header.classList.add('header-active');
+        header.classList.remove('header-normal');
+    } else {
+        header.classList.add('header-normal');
+        header.classList.remove('header-active');
+    }
+}
+}
 
 
-window.onscroll = () => {
-    efectoHabilidades()
+function highlightActiveNavLink() {
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('header nav a');
+    
     sections.forEach(sec => {
-        let top = window.scrollY;
-        let offset = sec.offsetTop-150;
-        let height = sec.offsetHeight;
-        let id = sec.getAttribute('id');
+        const top = window.scrollY;
+        const offset = sec.offsetTop - 110;
+        const height = sec.offsetHeight;
+        const id = sec.getAttribute('id');
 
         if (top >= offset && top < offset + height) {
             navLinks.forEach(link => {
                 link.classList.remove('active');
             });
-            document.querySelector('header nav a[href="#' + id + '"]').classList.add('active');
+            document.querySelector(`header nav a[href="#${id}"]`).classList.add('active');
         } else {
-            document.querySelector('header nav a[href="#' + id + '"]').classList.remove('active');
+            document.querySelector(`header nav a[href="#${id}"]`).classList.remove('active');
         }
     });
-};
+}
 
-/*==================== sticky navbar ====================*/
+// Manejo del evento de desplazamiento
+window.addEventListener('scroll', () => {
+    updateHeaderAppearance();
+    efectoHabilidades();
+    highlightActiveNavLink();
+});
 
-// let header = document.querySelector('header');
 
-// header.classList.toggle('sticky', window.scrollY > 100);
-
-
-/*==================== remove toggle icon and navbar when click navbar link (scroll) ====================*/
-
-menuIcon.classList.remove('bx-x');
-navbar.classList.remove('active');
 
 /*==================== scroll reveal ====================*/
 
@@ -71,27 +82,59 @@ const typed = new Typed ('.multiple-text', {
 });
 
 
-function efectoHabilidades(){
-    
-    let distancia_skills = window.innerHeight - skills.getBoundingClientRect().top;
-    if(distancia_skills >= 300){
-        let habilidades = document.getElementsByClassName("progreso");
-        habilidades[0].classList.add("html");
-        habilidades[1].classList.add("css");
-        habilidades[2].classList.add("javascript");
-        habilidades[3].classList.add("react");
-        habilidades[4].classList.add("node");
-        habilidades[5].classList.add("mongo");
-        habilidades[6].classList.add("java");
-        habilidades[7].classList.add("python");
-        habilidades[8].classList.add("comunicacion");
-        habilidades[9].classList.add("trabajo");
-        habilidades[10].classList.add("creatividad");
-        habilidades[11].classList.add("dedicacion");
-        habilidades[12].classList.add("proyect");
-        habilidades[13].classList.add("logica");
+function efectoHabilidades() {
+    const distancia_skills = window.innerHeight - skills.getBoundingClientRect().top;
+
+    if (distancia_skills >= 300) {
+        const habilidades = document.querySelectorAll(".progreso");
+
+        // Array de clases CSS que se agregarán a los elementos
+        const clasesCSS = [
+            "html",
+            "css",
+            "javascript",
+            "react",
+            "node",
+            "mongo",
+            "java",
+            "python",
+            "comunicacion",
+            "trabajo",
+            "creatividad",
+            "dedicacion",
+            "proyect",
+            "logica"
+        ];
+
+       
+        habilidades.forEach((habilidad, index) => {
+            habilidad.classList.add(clasesCSS[index]);
+        });
     }
 }
 
 
-//detecto el scrolling para aplicar la animacion de la barra de habilidades
+
+function createBox() {
+    if (window.innerWidth > 768) {
+    let span = document.createElement('span');
+
+    span.classList.add('animated-box');
+
+    let size = Math.random() * 80;
+
+    span.style.height = 40 + size + 'px';
+    span.style.width = 40 + size + 'px';
+
+    span.style.top = Math.random() * innerHeight + 'px';
+    span.style.left = Math.random() * innerWidth + 'px';
+
+    document.querySelector('.home').appendChild(span);
+ 
+    setTimeout(() =>{
+        span.remove();
+    },3000)
+    }
+}
+
+setInterval(createBox, 400);

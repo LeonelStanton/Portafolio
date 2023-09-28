@@ -41,14 +41,23 @@ section {
   top: 0;
   left: 0;
   width: 100%;
-  padding: 2rem 9%;
-  background: var(--bg-color);
+  padding: 1rem 9%;
+  
   display: flex;
   justify-content: space-between;
   align-items: center;
   z-index: 100;
+  
 }
 
+.header-active{
+  
+  background-color: rgb(42,71,94,1.0);
+ 
+}
+.header-normal{
+  background: transparent;
+}
 
 .navbar{
   display: flex;
@@ -94,34 +103,64 @@ section {
 }
 
 .home {
+
+  height: 100%;
+  width: 100%;
+  
+  background:linear-gradient( rgba(42,71,94,1.0) 5%, rgba(42,71,94,0.0) 70%);
+  position: relative;
+  top:0; left: 0;
+  z-index: 2;
+  overflow:hidden;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: url("./assets/background.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
+}
+
+.animated-box{
+  position: absolute;
+  background:#1aa0ff3d;
+  background: transparent;
+  border: 2px solid var(--main-color-second);
+  display: block;
+  pointer-events: none;
+  border-radius: .5rem;
+  animation: animate 3s linear infinite;
+}
+@keyframes animate{
+  0%{
+      opacity: 0;
+      transform:scale(0) translateY(-200%) rotate(0deg);
+  }
+  10%{
+      opacity: 1;
+  }
+  90%{
+      opacity: 1;
+  }
+  100%{
+      opacity: 0;
+      transform:scale(1) translateY(-500%) rotate(360deg);
+  }
 }
 
 
+.home-img{
+  z-index: 4;
+}
 .home-img img {
   width: 20vw;
    /*animation: floatImage 4s ease-in-out infinite;*/
   border-radius: 50%;
   border: solid 2px var(--main-color);
-  /*position: relative;
-  top: -50%;
-  right: -50%;
-  z-index: 1;
-*/
+  
 }
 
 .home-content  {
- /* position: absolute;
-  z-index: 10;
- */
-  padding: 0 80px 0 0;
+
  
+  padding: 0 80px 0 0;
+ z-index: 4;
 
 }
 @keyframes floatImage {
@@ -189,60 +228,6 @@ span {
   font-size: 4.5rem;
  
 }
-
-/*About*/
-.about {
-  display: flex;
-  justify-content: space-between;
- 
-  position: relative;
-  background: var(--bg-color);
-  padding: 0;
-}
-
-.about-img{
-  clip-path: polygon(0 10%, 65% 10%, 100% 50%, 65% 90%, 0 90%);
-  
-    background-color: var(--second-bg-color);
-    background: url("./assets/background.jpg");
-    width: 30%;
-    height: 100%;
-    left: 0;
-    top:0;
-    position: absolute;
-   
-}
-
-.about-img img {
-
-  position: relative;
-  width: 20vw;
-   /*animation: floatImage 4s ease-in-out infinite;*/
-  border-radius: 50%;
-  left: 20%;
-  top: 25%;
-  border: solid 2px var(--main-color);
-}
-
-.about-content{
-  position: absolute;
- left: 50%;
-  top:50%;
-}
-.about-content h2 {
-  text-align: left;
-  line-height: 1.2;
-}
-
-.about-content h3 {
-  font-size: 2.6rem;
-}
-
-.about-content p {
-  font-size: 1.6rem;
-
-}
-
 
 
 /* SECCION S K I L L S */
@@ -849,7 +834,10 @@ padding:0 10px 1% 10px ;
   color: var(--second-bg-color);
   box-shadow: 0 0 1rem var(--main-color);
 }
-
+.footer{
+  background:url("./assets/background.jpg") ;
+  background-size: cover;
+}
 .footer-text{
   
   min-width: 55%;
@@ -957,6 +945,10 @@ justify-content: end;
 }
 
 @media (max-width: 768px) {
+  .header{
+    background-color: var(--bg-color);
+    
+  }
   #menu-icon {
     display: block;
   }
@@ -994,6 +986,8 @@ justify-content: end;
  
   .home {
     flex-direction: column;
+   top: 8rem;
+   
   }
   .home-content  {
     
@@ -1010,7 +1004,7 @@ justify-content: end;
   }
 
   .home-img img {
-    width: 70vw;
+    width: 50vw;
     margin-top: 4rem;
   }
 
@@ -1101,15 +1095,8 @@ footer{
   }
 }
 
-@media (max-width: 365px) {
-  .home-img img {
-    width: 90vw;
-  }
 
-  .about-img img {
-    width: 90vw;
-  }
 
   
-}
+
 
