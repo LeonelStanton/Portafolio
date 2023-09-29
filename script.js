@@ -73,12 +73,14 @@ ScrollReveal().reveal('.home-content p,  .about-pskills, .derecha', { origin: 'r
 
 
 
-const typed = new Typed ('.multiple-text', {
-    strings: ['Hincha de Boca','FrontEnd Developer', 'Peronista', 'Tarantinista'],
-    typeSpeed: 100,
-    backSpeed: 100,
-    backDelay: 1000,
-    loop: true
+document.addEventListener('DOMContentLoaded', function() {
+    const typed = new Typed('.multiple-text', {
+        strings: ['FrontEnd Developer', 'Future Backend Developer', 'Estudiante de Ingeniería'],
+        typeSpeed: 100,
+        backSpeed: 100,
+        backDelay: 1000,
+        loop: true
+    });
 });
 
 
@@ -130,11 +132,13 @@ function createBox() {
     span.style.left = Math.random() * innerWidth + 'px';
 
     document.querySelector('.home').appendChild(span);
- 
+    span.addEventListener('click', () => {
+        span.remove(); // Eliminar la caja al hacer clic en ella
+    });
     setTimeout(() =>{
         span.remove();
     },3000)
     }
 }
 
-setInterval(createBox, 400);
+setInterval(createBox, 600);
