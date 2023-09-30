@@ -41,7 +41,7 @@ section {
   top: 0;
   left: 0;
   width: 100%;
-  padding: 1rem 9%;
+  padding: 1.5rem 9%;
   
   display: flex;
   justify-content: space-between;
@@ -106,7 +106,6 @@ section {
 
   height: 100%;
   width: 100%;
-  
   background:linear-gradient( rgba(42,71,94,1.0) 5%, rgba(42,71,94,0.0) 70%);
   position: relative;
   top:0; left: 0;
@@ -121,6 +120,7 @@ section {
   position: absolute;
   background:#1aa0ff3d;
   background: transparent;
+  filter: blur(10px);
   border: 2px solid var(--main-color-second);
   display: block;
   border-radius: .5rem;
@@ -208,19 +208,23 @@ span {
   font-size: 1.6rem;
   color:#fff;
   letter-spacing: 0.03em;
-  text-transform: uppercase;
   font-weight: 500;
   border-radius: 3px;
     box-shadow: 0 0 4px #000;
   transition: 0.5s ease;
-  
+  margin-right:3rem ;
 }
 
+.btncontact{
+  background: #06c1ff2c;
+}
 
 .btn:hover {
   background: linear-gradient(90deg, #06BFFF 30%, #2D73FF 100%);
 }
-
+.btncontact:hover{
+  background: #06c1ffb0;
+}
 
 .heading {
   text-align: center;
@@ -472,7 +476,7 @@ span {
   justify-content: space-between;
 }
 .curriculum .fila .col{
-  width: 49%;
+  width: 100%;
   padding: 0 20px;
 }
 .curriculum .fila .col h3{
@@ -530,11 +534,13 @@ background: -webkit-linear-gradient( -45deg, rgba(64,121,153,1) 5%,rgba(42,62,89
   margin-right: 20px;
   height: 23rem;
   
+  
 
 }
 .curriculum .fila .izq-empty, .der-empty{
 
   height: 23rem;
+ 
   
 }
 
@@ -542,6 +548,7 @@ background: -webkit-linear-gradient( -45deg, rgba(64,121,153,1) 5%,rgba(42,62,89
   border-left: 2px solid var(--main-color-second);
   margin-left: 20px;
   height: 23rem;
+  
  
 }
 .curriculum .fila .item .conectori{

@@ -123,7 +123,7 @@ function createBox() {
 
     span.classList.add('animated-box');
 
-    let size = Math.random() * 80;
+    let size = Math.random() * 40;
 
     span.style.height = 40 + size + 'px';
     span.style.width = 40 + size + 'px';
@@ -141,4 +141,4 @@ function createBox() {
     }
 }
 
-setInterval(createBox, 600);
+setInterval(createBox, 800);
