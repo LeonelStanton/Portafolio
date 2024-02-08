@@ -368,7 +368,7 @@ span {
 }
 @keyframes node {
   0%{width: 0%;}
-  100%{width: 55%;}
+  100%{width: 70%;}
 }
 
 .skills .skill .mongo{
@@ -377,7 +377,7 @@ span {
 }
 @keyframes mongo {
   0%{width: 0%;}
-  100%{width: 50%;}
+  100%{width: 70%;}
 }
 
 .skills .skill .java{

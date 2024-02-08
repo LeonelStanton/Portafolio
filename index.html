@@ -103,7 +103,7 @@
                   <p class="nose"><i class="bx bxl-nodejs"></i></p>
                   <div class="barra-skill">
                     <div class="progreso">
-                      <span>55%</span>
+                      <span>70%</span>
                     </div>
                   </div>
                 </div>
@@ -111,7 +111,7 @@
                   <p class="nose"><i class="bx bxl-mongodb"></i></p>
                   <div class="barra-skill">
                     <div class="progreso">
-                      <span>50%</span>
+                      <span>70%</span>
                     </div>
                   </div>
                 </div>
@@ -197,7 +197,7 @@
                 <div class="item izq">
                   <h4>Ingeniería en computación</h4>
                   <span class="casa">Universidad Nacional del Sur</span>
-                  <span class="fecha">2017 - en curso</span>
+                  <span class="fecha">2018 - en curso</span>
                   <p>
                     Actualmente en tercer año, con materias aprobadas como
                     Resolución de problemas y algoritmos, Programación orientada
@@ -211,6 +211,49 @@
                 </div>
                 <div class="izq-empty"></div>
                 <div class="item izq">
+                  <h4>Desarrollador BackEnd</h4>
+                  <span class="casa">Coderhouse</span>
+                  <span class="fecha">2023-24</span>
+                  <p>
+                    Durante este curso logré transformarme en Desarrollador Full Stack. Aprendí a desarrollar aplicaciones modernas con Node.js y MongoDB. Programando en JavaScript del lado del servidor aplicando técnicas asincrónicas.
+                  </p>
+                  <div class="conectori">
+                    <div class="circuloi"></div>
+                  </div>
+                </div>
+                
+                <div class="izq-empty"></div>
+                <div class="item izq">
+                  <h4>Full Stack Python</h4>
+                  <span class="casa">Codo a Codo 4.0</span>
+                  <span class="fecha">2023</span>
+                  <p>
+                    Curso de 4 meses de duración donde realice junto a otros
+                    compañeros una web con HTML,CSS y JavaScript y una base de
+                    datos con Python y Django.
+                  </p>
+                  <div class="conectori">
+                    <div class="circuloi"></div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col derecha">
+                <div class="der-empty"></div>
+                <div class="item der">
+                  <h4>Desarrollador SQL</h4>
+                  <span class="casa">Coderhouse</span>
+                  <span class="fecha">2024-en curso</span>
+                  <p>
+                    Ahora mismo realizando este curso para seguir ampliando mis conocimientos sobre base de datos y Programación BackEnd.
+                  </p>
+                  <div class="conectord">
+                    <div class="circulod"></div>
+                  </div>
+                </div>
+                
+                <div class="der-empty"></div>
+                <div class="item der">
                   <h4>Desarrollador FrontEnd</h4>
                   <span class="casa">Coderhouse</span>
                   <span class="fecha">2022-23</span>
@@ -220,40 +263,11 @@
                     todos en el top 10 de alumnos. Entre otras cosas, aprendí a
                     importar APIs y a utilizar herramientas como Firebase.
                   </p>
-                  <div class="conectori">
-                    <div class="circuloi"></div>
-                  </div>
-                </div>
-                <div class="izq-empty"></div>
-              </div>
-
-              <div class="col derecha">
-                <div class="der-empty"></div>
-                <div class="item der">
-                  <h4>Desarrollador BackEnd</h4>
-                  <span class="casa">Coderhouse</span>
-                  <span class="fecha">2023-en curso</span>
-                  <p>
-                    Ahora mismo realizando este curso para transformarme en Desarrollador Full Stack. Aprendiendo a desarrollar aplicaciones modernas con Node.js y MongoDB. Programando en JavaScript del lado del servidor aplicando técnicas asincrónicas.
-                  </p>
                   <div class="conectord">
                     <div class="circulod"></div>
                   </div>
                 </div>
-                <div class="der-empty"></div>
-                <div class="item der">
-                  <h4>Full Stack Python</h4>
-                  <span class="casa">Codo a Codo 4.0</span>
-                  <span class="fecha">2023</span>
-                  <p>
-                    Curso de 4 meses de duración donde realice junto a otros
-                    compañeros una web con HTML,CSS y JavaScript y una base de
-                    datos con Python y Django.
-                  </p>
-                  <div class="conectord">
-                    <div class="circulod"></div>
-                  </div>
-                </div>
+               
               </div>
             </div>
           </div>
@@ -366,11 +380,11 @@
           <div>
           <h2 class="heading">&lt;Contact<span>/</span>&gt;</h2>
 
-          <form action="#">
+          <form action="https://formsubmit.co/leonel_s2011@hotmail.com" id="form" class="form" method="POST" onsubmit="handleSubmit(event)">
             
             <div class="input-box">
-              <input type="text" placeholder="Nombre" />
-              <input type="email" placeholder="Email" />
+              <input type="text" placeholder="Nombre" required/>
+              <input type="email" placeholder="Email" required/>
             </div>
             
             <textarea
@@ -379,8 +393,9 @@
               cols="30"
               rows="10"
               placeholder="Mensaje"
+              required
             ></textarea>
-            <button type="submit" class="btn">Enviar Mensaje</button>
+            <button type="submit" class="btn" id="submitButton" >Enviar Mensaje</button>
           </form>
         </div>
         </section>
@@ -405,6 +420,9 @@
 
         <!-- scroll reveal -->
         <script src="https://unpkg.com/scrollreveal"></script>
+
+         <!-- sweet alert -->
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
         <!-- typed js -->
         <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>

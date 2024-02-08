@@ -142,3 +142,49 @@ function createBox() {
 }
 
 setInterval(createBox, 800);
+
+const handleSubmit = async (event) => {
+    event.preventDefault();
+    const isSubmitting = document.getElementById('submitButton').disabled;
+    
+    if (!isSubmitting) {
+      document.getElementById('submitButton').disabled = true;
+      document.getElementById('submitButton').textContent = 'Enviando...';
+      const formData = new FormData(event.target);
+  
+      try {
+        // Reemplaza con la acción y el método de envío del formulario
+        const response = await fetch('https://formsubmit.co/leonel_s2011@hotmail.com', {
+          method: 'POST',
+          body: formData,
+        });
+  
+        if (response.ok) {
+          // Reemplaza con tu mensaje de éxito o manejo específico usando Swal.fire
+          Swal.fire({
+            title: "¡Éxito!",
+            text: "Mensaje enviado correctamente",
+            icon: "success",
+            confirmButtonText: "Aceptar",
+          });
+          event.target.reset();
+        } else {
+          throw new Error("Hubo un problema al enviar su mensaje. Por favor, inténtalo de nuevo.");
+        }
+      } catch (error) {
+        // Maneja errores usando Swal.fire
+        Swal.fire({
+          title: "Error",
+          text: error.message,
+          icon: "error",
+          confirmButtonText: "Aceptar",
+        });
+      }
+     finally {
+        document.getElementById('submitButton').disabled = false;
+        document.getElementById('submitButton').textContent = 'Enviar Mensaje';
+      }
+     
+    }
+    const form = document.getElementById('form');
+  };
