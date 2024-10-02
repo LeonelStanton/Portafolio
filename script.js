@@ -75,7 +75,7 @@ ScrollReveal().reveal('.home-content p,  .about-pskills, .derecha', { origin: 'r
 
 document.addEventListener('DOMContentLoaded', function() {
     const typed = new Typed('.multiple-text', {
-        strings: ['FrontEnd Developer', 'Future Backend Developer', 'Estudiante de Ingeniería'],
+        strings: ['FrontEnd Developer', 'Backend Developer', 'Engineering Student'],
         typeSpeed: 100,
         backSpeed: 100,
         backDelay: 1000,
